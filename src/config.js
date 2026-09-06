@@ -1,0 +1,19 @@
+const {
+  MC_HOST,
+  MC_PORT,
+  PORT,
+  RATE_LIMIT_MAX,
+  RATE_LIMIT_WINDOW_MS,
+  CACHE_TTL_MS,
+  CONNECT_TIMEOUT_MS,
+} = process.env;
+
+module.exports = {
+  MC_HOST: MC_HOST || 'localhost',
+  MC_PORT: Number(MC_PORT) || 25565,
+  PORT: Number(PORT) || 3001,
+  RATE_LIMIT_MAX: Number(RATE_LIMIT_MAX) || 30,
+  RATE_LIMIT_WINDOW_MS: Number(RATE_LIMIT_WINDOW_MS) || 60_000,
+  CACHE_TTL_MS: Number(CACHE_TTL_MS) || 10_000,
+  CONNECT_TIMEOUT_MS: Number(CONNECT_TIMEOUT_MS) || 3_000,
+};
